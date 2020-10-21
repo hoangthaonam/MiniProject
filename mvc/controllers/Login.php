@@ -11,7 +11,7 @@
                 $username = $_POST["username"];
                 $password = $_POST["password"];
                 $user = $this->models("User");
-                if($user->checkLogin($username,$password)>0){
+                if($user->checkLogin($username,$password)){
                     $_SESSION["username"] = $username;
                     if($_POST["remember"]){
                         setcookie("username",$username,time()+1800);

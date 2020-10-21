@@ -26,6 +26,7 @@
                 $flag = false;
             }
             if($flag){
+                $password = password_hash($password,PASSWORD_BCRYPT);
                 $user->createUser($username,$password);
                 $_SESSION["username"] = $username;
                 header('Location: http://localhost/Intern/MiniProject/Home');
