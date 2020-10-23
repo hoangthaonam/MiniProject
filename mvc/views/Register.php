@@ -33,6 +33,13 @@
             $.post("http://localhost/Intern/MiniProject/Register/validatePassword",{password:password, re_password:re_password},function(data){
                 $("#alert_password").html(data);
             })
+        });
+        $("#password").keyup(function(){
+            let re_password = $("#re_password").val();
+            let password = $(this).val();
+            $.post("http://localhost/Intern/MiniProject/Register/validatePassword",{password:password, re_password:re_password},function(data){
+                $("#alert_password").html(data);
+            })
         })
     });
 </script>
